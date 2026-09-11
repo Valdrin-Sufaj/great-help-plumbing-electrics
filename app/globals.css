@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0d2035;
+  --muted: #53697f;
+  --blue: #0b5ea8;
+  --blue-deep: #062f58;
+  --blue-bright: #37b7ff;
+  --accent: #f2b33d;
+  --accent-deep: #d99018;
+  --soft: #edf7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid rgba(55, 183, 255, 0.58);
+  outline-offset: 3px;
+}
+
+.hero-mask {
+  background:
+    linear-gradient(90deg, rgba(6, 47, 88, 0.95) 0%, rgba(6, 47, 88, 0.88) 42%, rgba(6, 47, 88, 0.35) 72%, rgba(6, 47, 88, 0.16) 100%),
+    linear-gradient(180deg, rgba(6, 47, 88, 0.14), rgba(6, 47, 88, 0.72));
+}
+
+.section-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.clip-corner {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
+}
