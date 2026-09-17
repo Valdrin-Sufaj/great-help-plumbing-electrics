@@ -4,7 +4,7 @@ import "./globals.css";
 
 const siteUrl = "https://www.greathelpplumbing.co.uk";
 const businessName = "Great Help Plumbing & Electrics";
-const phone = "+447471722821";
+const phone = "+441174790289";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

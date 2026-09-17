@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Logo } from "@/components/Logo";
 import { QuoteForm } from "@/components/QuoteForm";
 
-const phoneDisplay = "07471 722821";
-const phoneHref = "tel:+447471722821";
+const phoneDisplay = "0117 479 0289";
+const phoneHref = "tel:+441174790289";
 
 const services = [
   "Emergency plumbing",
