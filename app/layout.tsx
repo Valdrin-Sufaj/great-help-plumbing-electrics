@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import "./globals.css";
 
 const siteUrl = "https://www.greathelpplumbing.co.uk";
 const businessName = "Great Help Plumbing & Electrics";
 const phone = "+441174790289";
+const googleAdsId = "AW-18436158353";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -85,6 +87,18 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAdsId}');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
