@@ -4,6 +4,14 @@ import { FormEvent, useState } from "react";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
+const leadConversionId = "AW-18436158353/hlzSCLz1mfwcEJHnhddE";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export function QuoteForm() {
   const [state, setState] = useState<FormState>("idle");
   const [error, setError] = useState("");
@@ -29,6 +37,9 @@ export function QuoteForm() {
     });
 
     if (response.ok) {
+      window.gtag?.("event", "conversion", {
+        send_to: leadConversionId,
+      });
       form.reset();
       setState("sent");
       return;
